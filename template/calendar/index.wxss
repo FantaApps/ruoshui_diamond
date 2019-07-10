@@ -147,7 +147,7 @@
 }
 
 .disable-day-circle {
-  background-color: #f6f6f7;
+  background-color: #70e1fa;
 }
 
 .border-radius {
