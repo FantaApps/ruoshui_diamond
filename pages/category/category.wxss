@@ -10,6 +10,7 @@
 }
 .right {
   width: 550rpx;
+  height: 1000rpx;
   flex-grow: 1;
 }
 
@@ -23,7 +24,7 @@
 }
 
 .category-item-active {
-  background-color: #e4e4e4;
+  background-color: #b6b6b6;
 }
 
 .goodsWrap-category {
