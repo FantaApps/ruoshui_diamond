@@ -115,4 +115,9 @@ Page({
     console.log(this.data.searchVal)
     this.getGoodsList(0, this.data.searchVal)
   },
+  toDetailsTap: function(e) {
+    wx.navigateTo({
+      url: "/pages/goods-details/index?id=" + e.currentTarget.dataset.id
+    })
+  },
 })
