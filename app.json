@@ -18,6 +18,7 @@
     "pages/score/index",
     "pages/sign/index",
     "pages/maidan/index",
+    "pages/search/index",
     "pages/coupons/index"
   ],
   "window": {
@@ -47,6 +48,13 @@
         "selectedIconPath": "images/nav/ic_catefory_pressed.png",
         "text": "商品"
       },
+      {
+        "pagePath": "pages/search/index",
+        "iconPath": "images/nav/search.png",
+        "selectedIconPath": "images/nav/search.png",
+        "text": "搜索"
+      },
+
       {
         "pagePath": "pages/shop-cart/index",
         "iconPath": "images/nav/cart-off.png",

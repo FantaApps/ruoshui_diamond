@@ -8,7 +8,7 @@
     <view class="weui-form-preview" wx:for="{{orderList}}" wx:key="*this">
       <view class="weui-form-preview__hd">
         <view class="weui-form-preview__item">
-          <view class="weui-form-preview__label">取餐号</view>
+          <view class="weui-form-preview__label">编号</view>
           <view class="weui-form-preview__value_in-hd">{{item.dingdanhao}}</view>
         </view>
       </view>
