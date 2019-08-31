@@ -55,6 +55,30 @@ App({
         })        
       }
     })
+
+    this.getOpenid()
+  },
+  getOpenid: function () {
+    let that = this;  //获取openid不需要授权
+    wx.login({
+      success: function (res) {    //请求自己后台获取用户openid
+
+        wx.request(
+          {
+            url: 'https://30paotui.com/user/wechat',
+            data: {
+              appid: 'wx0edb5ec737922eb7',
+              secret: '9460f2582f358c839ebd5d8177b98775',
+              code: res.code
+            },
+            success: function (response) {
+              var openid = response.data.openid;
+              console.log('请求获取openid:' + openid);
+              wx.setStorageSync('openid', openid);
+            }
+          })
+      }
+    })
   },
   goLoginPageTimeOut: function() {
     if (this.navigateToLogin){
@@ -78,5 +102,8 @@ App({
   globalData: {                
     isConnected: true,
     launchOption: undefined
-  }
+  },
+  server: "https://www.streamnet-chain.com",
+  //server: "http://localhost:8089",
+  //server: "http://39.100.142.164:8089",
 })

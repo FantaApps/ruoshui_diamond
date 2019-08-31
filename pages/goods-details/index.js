@@ -1,4 +1,5 @@
 const WXAPI = require('../../wxapi/main')
+const JIYOU = require('../../wxapi/jiyou')
 const app = getApp();
 const WxParse = require('../../wxParse/wxParse.js');
 const regeneratorRuntime = require('../../utils/runtime')
@@ -74,6 +75,17 @@ Page({
         buyNumber: (goodsDetailRes.data.basicInfo.stores > 0) ? 1 : 0,
         currentPages: getCurrentPages()
       }
+      console.log(_data.goodsDetail)
+      var utc = new Date().toJSON().slice(0, 24)
+      JIYOU.click(
+        {
+          "project": "若水藏真",
+          "productType": _data.goodsDetail.category.name,
+          "productName": _data.goodsDetail.basicInfo.name,
+          "openid": wx.getStorageSync('openid'),
+          "clickTime": utc
+        }
+      )
       if (goodsKanjiaSetRes.code == 0) {
         _data.curGoodsKanjia = goodsKanjiaSetRes.data
         that.data.kjId = goodsKanjiaSetRes.data.id
