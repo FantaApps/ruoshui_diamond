@@ -81,5 +81,8 @@ module.exports = {
   },
   getOpenId: (data) => {
     return request('/v1/project/openid', 'GET', data)
-  }
+  },
+  click: (data) => {
+    return request('/v1/product/click', 'POST', data)
+  },
 }
