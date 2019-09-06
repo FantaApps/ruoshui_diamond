@@ -1,5 +1,6 @@
 const WXAPI = require('../../wxapi/main')
 const CONFIG = require('../../config.js')
+const JIYOU = require('../../wxapi/jiyou')
 const app = getApp()
 
 Page({
@@ -52,19 +53,34 @@ Page({
       })
     }
   },
+  getOpenid: function () {
+    let that = this;  //获取openid不需要授权
+    wx.login({
+      success: function (res) {
+        JIYOU.getOpenId(
+          {
+            project: "若水藏真",
+            appid: "wx0edb5ec737922eb7",
+            resCode: res.code
+          }
+        ).then(function (res) {
+          var openid = res.data
+          console.log('请求获取openid:' + openid);
+          wx.setStorageSync('openid', openid);
+          that.setData({
+            openid: "获取到的openid：" + openid
+          })
+        })
+      }
+    });
+  },
   bindTypeTap: function(e) {
     this.setData({
       selectCurrent: e.index
     })
   },
   onLoad: function(e) {
-    // const that = this
-    // if (e && e.scene) {
-    //   const scene = decodeURIComponent(e.scene)
-    //   if (scene) {        
-    //     wx.setStorageSync('referrer', scene.substring(11))
-    //   }
-    // }
+    this.getOpenid()
     wx.setNavigationBarTitle({
       title: wx.getStorageSync('mallName')
     })

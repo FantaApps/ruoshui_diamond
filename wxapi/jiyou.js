@@ -50,8 +50,11 @@ module.exports = {
   addUserAccount: (data) => {
     return request('/v1/user/add', 'POST', data)
   },
-  getUserAdded: (data) => {
+  getUserAdded : (data) => {
     return request('/v1/user/added', 'GET', data)
+  },
+  getUserGranted: (data) => {
+    return request('/v1/user/granted', 'GET', data)
   },
   updateUserAccount: (data) => {
     return request('/v1/user/update', 'PUT', data)
@@ -63,9 +66,20 @@ module.exports = {
     return request('/v1/user/develop/update', 'PUT', data)
   },
   addProduct: (data) => {
+    console.log(data)
     return request('/v1/product/add', 'POST', data)
   },
-  click : (data) => {
-    return request('/v1/product/click', 'POST', data)
+  getProductId : (data) => {
+    console.log(data)
+    return request('/v1/product', 'GET', data)
+  },
+  getUnconfirmedPurchase: (data) => {
+    return request('/v1/product/sale/unconfirmed', 'GET', data)
+  },
+  confirmPurchase: (data) => {
+    return request('/v1/product/purchase', 'PUT', data)
+  },
+  getOpenId: (data) => {
+    return request('/v1/project/openid', 'GET', data)
   }
 }
