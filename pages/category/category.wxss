@@ -82,6 +82,7 @@
   border-radius: 28px;
   left: 20px;
   box-shadow: #E45B61 0 0 10px;
+  width: 50rpx;
 }
 .goods-num-text{
   position: relative;
