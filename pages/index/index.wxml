@@ -15,28 +15,39 @@
       </view>
     </view>
     <block wx:for="{{shopSubList}}">
-      <view class="weui-cells__title">{{item.name}}</view>
-      <view class="weui-cells weui-cells_after-title">
-        <view class="weui-cell weui-cell_access" hover-class="weui-cell_active" data-id="{{item.id}}" bindtap='goMap'>
-          <view class="weui-cell__hd">
-            <image src="/images/icon/location.png"></image>
+      <view class="shopTitle">{{item.name}}</view>
+      <view class="shopInfo">
+        <view class="shopInfoItem shopInfoLocation" data-id="{{item.id}}" bindtap='goMap'>
+          <view class="itemName">
+            <image class='itemImage' src="/images/icon/location.png"></image>
+            <view>{{ item.address }}</view>
           </view>
-          <view class="weui-cell__bd">{{ item.address }}</view>
-          <view class="weui-cell__ft weui-cell__ft_in-access">地图</view>
+          <view class="itemText">
+            <image class='itemSmallImage' src="/images/icon/purple.png"></image>
+            <view>地图</view>
+          </view>
         </view>
-        <view class="weui-cell">
-          <view class="weui-cell__hd">
-            <image src="/images/icon/time.png"></image>
+        <view class="shopInfoItem">
+          <view class="itemName">
+            <image class='itemImage' src="/images/icon/time.png"></image>
+            <view>营业时间</view>
           </view>
-          <view class="weui-cell__bd">营业时间</view>
-          <view class="weui-cell__ft">{{ item.openingHours }}</view>
+          
+          <view class="itemText">
+            <image class='itemSmallImage' src="/images/icon/blue.png"></image>
+            <view>{{ item.openingHours }}</view>
+          </view>
         </view>
-        <view class="weui-cell">
-          <view class="weui-cell__hd">
-            <image src="/images/icon/tel.png"></image>
+        <view class="shopInfoItem">
+          <view class="itemName">
+            <image class='itemImage' src="/images/icon/tel.png"></image>
+            <view>联系电话</view>
           </view>
-          <view class="weui-cell__bd">联系电话</view>
-          <view class="weui-cell__ft" data-tel="{{item.linkPhone}}" bindtap='callPhone'>{{ item.linkPhone }}</view>
+          
+          <view class="itemText" data-tel="{{item.linkPhone}}" bindtap='callPhone'>
+            <image class='itemSmallImage' src="/images/icon/yellow.png"></image>
+            <view>{{ item.linkPhone }}</view>
+          </view>
         </view>
         <!-- <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
           <view class="weui-cell__hd">

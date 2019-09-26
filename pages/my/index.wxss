@@ -1,18 +1,17 @@
 .asset {
-  border-bottom: 1rpx solid #eee0c0;
   padding-bottom: 40rpx; 
 }
 .balance-name {
   text-align: center;
-  font-size: 24rpx;
-  padding-top: 40rpx;
+  font-size: 40rpx;
+  padding-top: 60rpx;
 }
 .balance-value {
   text-align: center;
   color:#e64340;
   font-weight: 600;
-  margin-top: 20rpx;
-  font-size: 40rpx;
+  margin-top: 100rpx;
+  font-size: 100rpx;
 }
 .weui-form-preview {
   margin-top: 50rpx;

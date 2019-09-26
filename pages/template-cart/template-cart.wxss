@@ -3,13 +3,18 @@
 }
 .title-box{
     width: 100%;
-    padding-top: 330rpx;
+    padding-top: 400rpx;
     text-align: center;
     font-size:28rpx;
     color:#999;
     background: url(https://cdn.it120.cc/images/weappshop/icon-cart.png) no-repeat center 205rpx;
-    background-size: 100rpx auto;
+    background-size: 200rpx auto;
     margin-bottom: 50rpx;
+}
+.btnGoShopping{
+  background: linear-gradient(to bottom, #E04860, #DE6B6A);
+  border-radius: 30px;
+  box-shadow: #DE6B6A 0 5px 10px;
 }
 .list-top{
     width: 100%;

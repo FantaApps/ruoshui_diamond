@@ -29,25 +29,18 @@
 }
 
 .goodsWrap-category {
-  margin-left: 20rpx;
-  margin-bottom: 20rpx;
-  height: 80rpx;
-  line-height: 80rpx;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  border-bottom: 1rpx solid #eee0c0;
+  padding: 30rpx;
 }
 
 .goods-item {
-  width: 100%;
   display: flex;
-  padding: 5px;
+  margin: 20rpx 30rpx;
   flex-direction: row;
-  margin-left: 20rpx;
   align-items: center;
-  justify-content: flex-start;
-  border-bottom: 1rpx solid #f2f2f2;
+  justify-content: space-between;
+  background-color: #F0EFF9;
+  overflow: hidden;
+  border-radius: 5px;
 }
 
 .goods-pic {
@@ -59,12 +52,58 @@
 .goods-info {
   display: flex;
   flex-direction: column;
-  padding: 0px 5px 0px 5px;
-  height: 80px;
+  padding-left: 10rpx;
 }
 .goodsName {
   font-size: 28rpx;
 }
 .goodsPrice {
   color:#e64340;
+}
+.weui-search-bar.searchBar{
+  border: none;
+  box-shadow: #CCC 0 5rpx 10rpx;
+}
+.searchBox{
+  background: linear-gradient(to right, #D8C3FD, #C9CAFE);
+  border-radius: 10rpx;
+}
+.searchBoxInput{
+  color: white;
+}
+.searchBoxInput_placeholder{
+  color: white;
+}
+.searchBtn{
+  color: black;
+}
+.category-name{
+  background: linear-gradient(to right, #8E6CFE, #7181FB);
+  border-radius: 30rpx;
+  padding: 6px 30rpx;
+  font-size: 12px;
+  color: white;
+  box-shadow: gray 0 0 30rpx;
+}
+
+.goods-num{
+  position: relative;
+  bottom: 50px;
+  background-color: #E45B61;
+  padding: 15px;
+  border-radius: 28px;
+  left: 20px;
+  box-shadow: #E45B61 0 0 10px;
+  width: 50rpx;
+}
+.goods-num-text{
+  position: relative;
+  top: 12px;
+  right: 6px;
+  color: white;
+}
+.goods-item-product{
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
 }

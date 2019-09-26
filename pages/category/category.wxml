@@ -4,7 +4,7 @@
       <scroll-view class='left' scroll-y="true" scroll-into-view="{{categoryToView}}">
         <block wx:for="{{categories}}" wx:key="id">
           <view class="category-item {{categorySelected==item.scrollId?'category-item-active':''}}" data-id='{{item.scrollId}}' id='{{item.scrollId}}' bindtap='onCategoryClick'>
-            <text>{{item.name}}</text>
+            <view class='category-item-text'>{{item.name}}</view>
           </view>
         </block>
       </scroll-view>
@@ -15,12 +15,18 @@
             <text>{{item.name}}</text>
           </view>
 
-          <block wx:for="{{item.goods}}" wx:for-item="goods" wx:key="id">
+          <block wx:for="{{item.goods}}" wx:for-index='idx' wx:for-item="goods" wx:key="id">
             <view class='goods-item' bindtap="toDetailsTap" data-id="{{goods.id}}">
-              <image class='goods-pic' mode='aspectFill' lazy-load="true" src="{{goods.pic}}_m"></image>
-              <view class='goods-info'>
-                <text class='goodsName'>{{goods.name}}</text>
-                <text class='goodsPrice'>￥{{goods.minPrice}}</text>
+              <view class='goods-item-product'>
+                <image class='goods-pic' mode='aspectFill' lazy-load="true" src="{{goods.pic}}_m"></image>
+                <view class='goods-info'>
+                  <text class='goodsName'>{{goods.name}}</text>
+                  <text class='goodsPrice'>￥{{goods.minPrice}}</text>
+                </view>
+              </view>
+              
+              <view class='goods-num'>
+                <view class='goods-num-text'>{{idx+1}}</view>
               </view>
             </view>
           </block>

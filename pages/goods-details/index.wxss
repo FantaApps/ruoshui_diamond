@@ -76,6 +76,7 @@
 .btns {
   display: flex;
   justify-content:space-around;
+  padding-bottom: 30rpx;
 }
 .goIndex {
   position:fixed;
@@ -91,4 +92,15 @@
   width:50rpx;
   height:50rpx;
   margin-top: 15rpx;
+}
+.btnToCart{
+  background: linear-gradient(to bottom, #E04860, #DE6B6A);
+  border-radius: 30px;
+  box-shadow: #DE6B6A 0 5px 10px;
+  line-height: 2;
+}
+.btnBill{
+  border-radius: 30px;
+  box-shadow: gray 0 5px 10px;
+  line-height: 2;
 }
