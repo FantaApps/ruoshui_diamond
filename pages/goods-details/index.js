@@ -79,7 +79,7 @@ Page({
       var utc = new Date().toJSON().slice(0, 24)
       JIYOU.click(
         {
-          "project": "若水藏真",
+          "project": "斯里兰卡",
           "productType": _data.goodsDetail.category.name,
           "productName": _data.goodsDetail.basicInfo.name,
           "openid": wx.getStorageSync('openid'),

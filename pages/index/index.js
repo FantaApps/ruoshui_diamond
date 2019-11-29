@@ -59,8 +59,8 @@ Page({
       success: function (res) {
         JIYOU.getOpenId(
           {
-            project: "若水藏真",
-            appid: "wx0edb5ec737922eb7",
+            project: "斯里兰卡",
+            appid: "wx9874fc6cfebecb46",
             resCode: res.code
           }
         ).then(function (res) {
