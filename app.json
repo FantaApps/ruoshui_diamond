@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/address-add/index",
     "pages/category/category",
     "pages/start/start",
     "pages/goods-details/index",
@@ -16,6 +17,7 @@
     "pages/score-excharge/index",
     "pages/asset/index",
     "pages/score/index",
+    "pages/select-address/index",
     "pages/sign/index",
     "pages/maidan/index",
     "pages/search/index",

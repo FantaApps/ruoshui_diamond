@@ -1,0 +1,29 @@
+{
+  "name": "ruoshui_diamond",
+  "version": "1.0.0",
+  "description": "#### 介绍 专为面馆打造的小程序，本项目是纯原生开发的小程序项目，没有使用第三方的开发框架，具有较高的研究学习价值。",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FantaApps/ruoshui_diamond.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FantaApps/ruoshui_diamond/issues"
+  },
+  "homepage": "https://github.com/FantaApps/ruoshui_diamond#readme",
+  "dependencies": {
+    "apifm-wxapi": "^2.5.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1"
+  }
+}

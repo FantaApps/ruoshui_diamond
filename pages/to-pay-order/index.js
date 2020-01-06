@@ -5,7 +5,7 @@ Page({
   data: {
     totalScoreToPay: 0,
     goodsList: [],
-    isNeedLogistics: 0, // 是否需要物流信息
+    isNeedLogistics: 1, // 是否需要物流信息
     allGoodsPrice: 0,
     yunPrice: 0,
     allGoodsAndYunPrice: 0,
