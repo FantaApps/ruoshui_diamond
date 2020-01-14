@@ -2,6 +2,7 @@ const app = getApp()
 const wxpay = require('../../utils/pay.js')
 const CONFIG = require('../../config.js')
 const WXAPI = require('../../wxapi/main')
+const JIYOU = require('../../wxapi/jiyou')
 Page({
   data: {
     balance: 0.00,
@@ -64,6 +65,7 @@ Page({
     const that = this;
     const orderId = e.currentTarget.dataset.id;
     let money = e.currentTarget.dataset.money;
+    let msgData = this.prepareOrderMsgTemplate(orderId);
     WXAPI.userAmount(wx.getStorageSync('token')).then(function (res) {
       if (res.code == 0) {
         let _msg = '订单金额: ' + money + ' 元'
@@ -104,8 +106,39 @@ Page({
       WXAPI.orderPay(orderId, wx.getStorageSync('token')).then(function (res) {
         _this.onShow();
       })
+      this.sendOrderMsg(msgData)
     } else {
       wxpay.wxpay('order', money, orderId, "/pages/order-list/index");
+      this.sendOrderMsg(msgData)
     }
+  },
+  sendOrderMsg: function (msgData) {
+      JIYOU.sendMsg(msgData)
+  },
+  prepareOrderMsgTemplate: function(orderId) {
+    console.log(this.data)
+    let ret = {}
+    ret["ext"] = "";
+    ret["extend"] = "";
+    ret["params"] = this.getParams(orderId); // infer this information
+    ret["sig"] = ""; // will be calculated later
+    ret["sign"] = "若水藏真VIP";
+    ret["tel"] = {};
+    ret["tel"]["mobile"] = this.data.logisticsMap[orderId]["mobile"];
+    ret["tel"]["nationcode"] = "86";
+    var d = new Date();
+    d = Math.floor((d.setHours(d.getHours() + 0))/1000);
+    ret["time"] = d
+    ret["tpl_id"] = 413795;
+    console.log(ret)
+    return ret;
+  },
+  getParams : function(orderId) {
+    let ret = []
+    ret.push(this.data.logisticsMap[orderId]["linkMan"])
+    ret.push(this.data.goodsMap[orderId][0]["goodsName"])
+    ret.push(this.data.goodsMap[orderId][0]["goodsId"])
+    ret.push("价钱"+this.data.goodsMap[orderId][0]["amount"])
+    return ret;
   }
 })
